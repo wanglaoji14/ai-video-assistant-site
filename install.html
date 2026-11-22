@@ -1,0 +1,9 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>安装指南 · AI 视频助手</title><link rel="stylesheet" href="style.css"></head><body><nav><a class="brand" href="./">AI 视频助手</a><a href="privacy.html">隐私政策</a></nav><main class="prose"><h1>安装 AI 视频助手</h1><p>插件免费，模型使用消耗你自己的 WorkBuddy 账号额度。首发环境：macOS、Chrome 116+、Node.js 22+ 与已安装并登录的 WorkBuddy。</p>
+<div class="note">Chrome 商店版本尚未公开发布。下方为手动安装方式；商店审核状态会在完成提交后更新。不要把其他来源的扩展当作本产品安装。</div>
+<h2>安装本机连接器</h2><p>下载正式发布包并解压，双击 <code>安装本机连接器.command</code>，或在文件夹打开终端运行 <code>node scripts/install-host.mjs</code>。连接器仅调用已安装的 WorkBuddy，不读取账号密码或 API 密钥。</p><p><a class="button" href="ai-video-assistant-macos.zip" download>下载 macOS 安装包</a></p>
+<h2>安装浏览器扩展</h2><ol><li>在 Chrome 打开 <code>chrome://extensions/</code>，开启开发者模式。</li><li>点击“加载已解压的扩展程序”。</li><li>选择发布包内的 <code>release/chrome-extension</code> 文件夹。</li><li>将 AI 视频助手固定到工具栏。</li></ol>
+<h2>第一次提问</h2><p>打开视频、暂停，点击扩展图标，确认顶部画面和时间点。阅读并勾选数据发送授权，输入问题。处理时可点击“停止”，完成后可继续追问。</p>
+<h2>无法连接</h2><p>确认 WorkBuddy 已登录、账号额度可用，安装器运行成功，且 Node.js 没有被移除。移动源码目录不会影响已经复制到本机应用支持目录的连接器。首次安装后可关闭侧栏并重新打开。</p>
+<h2>启用语音</h2><p>此功能需要 Python 3.10+。运行 <code>node scripts/install-audio.mjs /path/to/python3</code>，首次会安装依赖并下载开源识别模型。重新打开侧栏后，点击“补充这段声音”，确认后回放并采集短片段，在电脑上识别语音；不额外调用转写 API。识别结果仍可能有误，应结合原片段判断。</p><h2>找不到视频或字幕</h2><p>将播放器滚动到可见位置，再点击工具栏图标。跨域嵌入、专有播放器或受保护内容可能无法读取。字幕不提供时仍可解释画面，或主动补充声音片段；没有实际语音转写时，不会假装已经听过声音。</p>
+<h2>卸载</h2><p>在 Chrome 扩展管理页移除 AI 视频助手，并运行发布包中的 <code>node scripts/uninstall-host.mjs</code>，只删除本产品的本机连接器。</p>
+<h2>支持</h2><p><a href="mailto:zhucy1208@gmail.com">zhucy1208@gmail.com</a>。反馈时可以提供错误文字与客户端版本，不需要发送密钥。</p></main><footer><a href="./">返回首页</a><a href="privacy.html">隐私政策</a></footer></body></html>
